@@ -29,7 +29,7 @@ public class TodoItem {
     }
 
     public void setTitle(String title) {
-        if (title == null || title.isEmpty()) {
+        if (title == null ) {
             throw new IllegalArgumentException("Title cannot be null or empty.");
         }
         this.title = title;

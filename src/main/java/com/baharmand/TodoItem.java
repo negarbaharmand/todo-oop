@@ -1,6 +1,7 @@
 package com.baharmand;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class TodoItem {
     private static int lastId = 0;
@@ -77,7 +78,28 @@ public class TodoItem {
     }
 
 
-    public String getSummary() {
-        return "id: " + id + " Title: " + title + " Description: " + taskDescription;
+
+    @Override
+    public String toString() {
+        return "id: " + id + " Title: " + title + " Description: " + taskDescription
+                + " Deadline: " + deadLine + " Done: " + done + " Creator: " + creator.getFirstName() + " " + creator.getLastName();
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        TodoItem todoItem = (TodoItem) object;
+        return id == todoItem.id &&
+                done == todoItem.done &&
+                Objects.equals(title, todoItem.title) &&
+                Objects.equals(taskDescription, todoItem.taskDescription) &&
+                Objects.equals(deadLine, todoItem.deadLine) &&
+                Objects.equals(creator, todoItem.creator);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, taskDescription, deadLine, done, creator);
     }
 }

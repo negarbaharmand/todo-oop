@@ -1,5 +1,7 @@
 package com.baharmand;
 
+import java.util.Objects;
+
 public class TodoItemTask {
     private static int lastId = 0;
     private final int id;
@@ -45,8 +47,25 @@ public class TodoItemTask {
         }
     }
 
-    public String getSummary() {
+    @Override
+    public String toString() {
         String assigneeInfo = assignee != null ? assignee.getFirstName() + " " + assignee.getLastName() : "Unassigned";
-        return "id: " + id + " Assigned: " + assigned + " Assignee: " + assigneeInfo;
+        return "id: " + id + " Assigned: " + assigned + " Assignee: " + assigneeInfo + " TodoItem: " + todoItem.toString();
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        TodoItemTask task = (TodoItemTask) object;
+        return id == task.id &&
+                assigned == task.assigned &&
+                Objects.equals(todoItem, task.todoItem) &&
+                Objects.equals(assignee, task.assignee);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, assigned, todoItem, assignee);
     }
 }

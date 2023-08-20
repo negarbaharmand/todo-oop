@@ -53,11 +53,15 @@ public class AppUser {
 
     @Override
     public boolean equals(Object object) {
-            if (this == object) return true;
-            if (object == null) return false;
-            AppUser appUser = (AppUser) object;
-            return Objects.equals(userName, appUser.userName) && role == appUser.role;
-        }
-
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        AppUser appUser = (AppUser) object;
+        return Objects.equals(userName, appUser.userName) && role == appUser.role;
     }
+
+    @Override
+    public String toString() {
+        return "AppUser {" + "userName='" + userName + '\'' + ", role=" + role + '}';
+    }
+
 }

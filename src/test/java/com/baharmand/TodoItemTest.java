@@ -12,7 +12,7 @@ class TodoItemTest {
 
     @BeforeEach
     public void setup() {
-        person = new Person("John", "Doe", "john@example.com");
+        person = new Person("Test", "Testsson", "test@example.com");
     }
 
     @Test

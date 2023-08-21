@@ -11,8 +11,8 @@ class TodoItemTaskTest {
 
     @BeforeEach
     public void setUp() {
-        assignedTask = new TodoItemTask(new TodoItem("Title", "Description", null, new Person("John", "Testsson", "john@example.com")), new Person("Negar", "Baharmand", "negar@example.com"));
-        unassignedTask = new TodoItemTask(new TodoItem("Title", "Description", null, new Person("John", "Testsson", "john@example.com")), null);
+        assignedTask = new TodoItemTask(new TodoItem("Title", "Description", null, new Person("Test", "Testsson", "test@example.com")), new Person("Negar", "Baharmand", "negar@example.com"));
+        unassignedTask = new TodoItemTask(new TodoItem("Title", "Description", null, new Person("Test", "Testsson", "test@example.com")), null);
     }
 
     @Test

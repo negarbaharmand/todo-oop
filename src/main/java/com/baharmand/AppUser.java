@@ -47,21 +47,23 @@ public class AppUser {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AppUser appUser = (AppUser) o;
+        return Objects.equals(userName, appUser.userName) && role == appUser.role;
+    }
+
+    @Override
     public int hashCode() {
         return Objects.hash(userName, role);
     }
 
     @Override
-    public boolean equals(Object object) {
-        if (this == object) return true;
-        if (object == null || getClass() != object.getClass()) return false;
-        AppUser appUser = (AppUser) object;
-        return Objects.equals(userName, appUser.userName) && role == appUser.role;
-    }
-
-    @Override
     public String toString() {
-        return "AppUser {" + "userName='" + userName + '\'' + ", role=" + role + '}';
+        return "AppUser{" +
+                "userName='" + userName + '\'' +
+                ", role=" + role +
+                '}';
     }
-
 }

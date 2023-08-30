@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public abstract class TodoItemDAOCollection implements TodoItemDAO {
+public class TodoItemDAOCollection implements TodoItemDAO {
+
     private Collection<TodoItem> todoItems;
 
     public TodoItemDAOCollection() {
@@ -21,7 +22,7 @@ public abstract class TodoItemDAOCollection implements TodoItemDAO {
     }
 
     @Override
-    public void remove(int id) {
+    public void remove(Integer id) {
         TodoItem itemToRemove = null;
         for (TodoItem item : todoItems) {
             if (item.getId() == id) {
@@ -59,7 +60,7 @@ public abstract class TodoItemDAOCollection implements TodoItemDAO {
     public Collection<TodoItem> findByTitleContains(String title) {
         List<TodoItem> result = new ArrayList<>();
         for (TodoItem item : todoItems) {
-            if (item.isDone()) {
+            if (item.getTitle().contains(title)) {
                 result.add(item);
             }
         }

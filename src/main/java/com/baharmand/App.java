@@ -1,5 +1,8 @@
 package com.baharmand;
 
+import com.baharmand.model.AppRole;
+import com.baharmand.model.AppUser;
+
 /**
  * Hello world!
  *

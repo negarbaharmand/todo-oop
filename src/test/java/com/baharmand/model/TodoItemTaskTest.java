@@ -1,9 +1,7 @@
-package com.baharmand;
+package com.baharmand.model;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class TodoItemTaskTest {
     private TodoItemTask assignedTask;

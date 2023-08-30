@@ -1,5 +1,8 @@
 package com.baharmand.dao;
 
-public interface PersonDAO {
+import com.baharmand.model.Person;
 
+public interface PersonDAO extends BaseDAO<PersonDAO, Integer> {
+    Person findById(int id);
+    Person findByEmail(String email);
 }

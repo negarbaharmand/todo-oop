@@ -1,4 +1,4 @@
-package com.baharmand;
+package com.baharmand.model;
 
 import java.util.Objects;
 

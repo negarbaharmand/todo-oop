@@ -1,6 +1,6 @@
 package com.baharmand.dao;
 
-import com.baharmand.AppUser;
+import com.baharmand.model.AppUser;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -11,6 +11,7 @@ public class AppUserDAOCollection implements AppUserDAO {
 
     @Override
     public void persist(AppUser appUser) {
+
         appUsers.add(appUser);
     }
 

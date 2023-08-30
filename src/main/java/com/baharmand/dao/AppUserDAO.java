@@ -1,12 +1,7 @@
 package com.baharmand.dao;
 
-import com.baharmand.AppUser;
+import com.baharmand.model.AppUser;
 
-import java.util.Collection;
-
-public interface AppUserDAO {
-    void persist(AppUser appUser);
+public interface AppUserDAO extends BaseDAO<AppUser, String> {
     AppUser findByUsername(String username);
-    Collection<AppUser> findAll();
-    void remove(String username);
 }

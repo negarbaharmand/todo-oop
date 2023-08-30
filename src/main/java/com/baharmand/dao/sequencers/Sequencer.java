@@ -1,4 +1,4 @@
-package com.baharmand.sequencers;
+package com.baharmand.dao.sequencers;
 
 public abstract class Sequencer {
     private static int currentId = 0;

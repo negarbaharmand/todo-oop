@@ -1,9 +1,10 @@
 package com.baharmand.model;
 
+import com.baharmand.dao.sequencers.PersonSequencer;
+
 import java.util.Objects;
 
 public class Person {
-    private static int lastId = 0;
     private final int id;
     private String firstName;
     private String lastName;
@@ -11,7 +12,7 @@ public class Person {
     private AppUser credential;
 
     public Person(String firstName, String lastName, String email) {
-        this.id = ++lastId;
+        this.id = PersonSequencer.getCurrentId();
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;

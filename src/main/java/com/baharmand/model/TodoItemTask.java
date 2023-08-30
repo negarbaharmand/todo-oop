@@ -1,16 +1,17 @@
 package com.baharmand.model;
 
+import com.baharmand.dao.sequencers.TodoItemSequencer;
+
 import java.util.Objects;
 
 public class TodoItemTask {
-    private static int lastId = 0;
     private final int id;
     private boolean assigned;
     private TodoItem todoItem;
     private Person assignee;
 
     public TodoItemTask(TodoItem todoItem, Person assignee) {
-        this.id = ++lastId;
+        this.id = TodoItemSequencer.getCurrentId();
         this.assigned = (assignee != null);
         this.todoItem = todoItem;
         this.assignee = assignee;

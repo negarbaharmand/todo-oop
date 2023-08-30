@@ -1,10 +1,11 @@
 package com.baharmand.model;
 
+import com.baharmand.dao.sequencers.TodoItemSequencer;
+
 import java.time.LocalDate;
 import java.util.Objects;
 
 public class TodoItem {
-    private static int lastId = 0;
     private final int id;
     private String title;
     private String taskDescription;
@@ -13,7 +14,7 @@ public class TodoItem {
     private Person creator;
 
     public TodoItem(String title, String description, LocalDate deadLine, Person creator) {
-        this.id = ++lastId;
+        this.id = TodoItemSequencer.getCurrentId();
         this.title = title;
         this.taskDescription = description;
         this.deadLine = deadLine;
@@ -30,7 +31,7 @@ public class TodoItem {
     }
 
     public void setTitle(String title) {
-        if (title == null ) {
+        if (title == null) {
             throw new IllegalArgumentException("Title cannot be null or empty.");
         }
         this.title = title;
@@ -76,7 +77,6 @@ public class TodoItem {
     public void setDone(boolean done) {
         this.done = done;
     }
-
 
 
     @Override

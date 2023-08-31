@@ -43,6 +43,11 @@ public class TodoItemTask {
 
     public void setAssignee(Person assignee) {
         this.assignee = assignee;
+        if (assignee != null) {
+            this.assigned = true;
+        } else {
+            this.assigned = false;
+        }
         if (assignee == null) {
             throw new IllegalArgumentException("Title cannot be null or empty.");
         }
